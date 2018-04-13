@@ -19,9 +19,10 @@ def main():
 	edgedImage = detectEdges(maskedImage)
 
 	# Remove the unimportant information of the image
+	ROI = getROI(edgedImage)
 
 
-	cv.imshow('yellow', edgedImage)
+	cv.imshow('yellow', ROI)
 	cv.waitKey(0)
 	cv.destroyAllWindows()
 
