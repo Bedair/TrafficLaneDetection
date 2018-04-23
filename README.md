@@ -20,4 +20,4 @@
 * Install python 3
 * install OpenCV Library
 * install nympy Library
-* before running the script, change the location of the video to be fed to the script
+* before running the script, change the location of the video to be fed to the script. I use the [video](https://www.youtube.com/watch?v=T6c0o7iR2u4) in this link
