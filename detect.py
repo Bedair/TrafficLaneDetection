@@ -34,7 +34,7 @@ def generateMaskedImage(gray, mask):
 	return masked
 
 def detectEdges(img):
-	edge = cv.Canny(img, 100, 200)
+	edge = cv.Canny(img, 250, 250)
 	return edge
 
 
@@ -44,8 +44,8 @@ def getROI(img):
 	mask = np.zeros_like(img)	# make an empty image similer to the frame
 
 	# make the coordinate for ROI (infront of the car)
-	topRight = [columns/2 + columns/8, rows/2 + rows/10]
-	topLeft = [columns/2 - columns/8, rows/2 + rows/10]
+	topRight = [columns/2 + columns/8, rows/2 + rows/6]
+	topLeft = [columns/2 - columns/8, rows/2 + rows/6]
 	bottomLeft = [columns/9, rows]
 	bottomRight = [columns-columns/9, rows]
 	coordinate = [np.array([bottomLeft, topLeft, topRight, bottomRight], dtype = np.int32)]
@@ -56,6 +56,3 @@ def getROI(img):
 	# Comine the mask with the frame to get the ROI
 	roi = cv.bitwise_and(img, mask)
 	return roi
-
-
-	return img
